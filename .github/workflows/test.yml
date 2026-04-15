@@ -12,4 +12,4 @@ jobs:
       # - name: Check PowerShell
       #   run: $PSVersionTable
       - name: Check Run tests
-        use: actions/checkout@v4
+        uses: actions/checkout@v4
