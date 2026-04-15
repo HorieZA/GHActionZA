@@ -1,6 +1,6 @@
 services:
-  mariadb:
-    container_name: mariadb
+  ai-maria:
+    container_name: ai-maria
     image: mariadb:12.1.2
     restart: always
     command: 
@@ -31,7 +31,7 @@ services:
     networks:
       - ai-agent
     depends_on:
-      - mariadb
+      - ai-maria
     working_dir: /workspace
     volumes:
       - ./backend/main.py:/workspace/main.py:rw
