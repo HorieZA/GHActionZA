@@ -9,5 +9,7 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Check PowerShell
-        run: $PSVersionTable
+      # - name: Check PowerShell
+      #   run: $PSVersionTable
+      - name: Check Run tests
+        use: actions/checkout@v4
