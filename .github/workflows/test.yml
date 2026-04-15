@@ -17,4 +17,5 @@ jobs:
       # - name: Check Node.js version
       #   run: node -v
       - name: npm install
+        working-directory: ./frontend
         run: npm i
