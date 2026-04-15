@@ -23,7 +23,7 @@ services:
   ai-back:
     container_name: ai-back
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     image: uv:1
     ports:
@@ -33,13 +33,6 @@ services:
     depends_on:
       - ai-maria
     working_dir: /workspace
-    volumes:
-      - ./backend/main.py:/workspace/main.py:rw
-      - ./backend/src:/workspace/src:rw
-      - ./backend/pyproject.toml:/workspace/pyproject.toml:ro
-      - ./backend/uv.lock:/workspace/uv.lock:rw
-      - ./backend/.env:/workspace/.env:rw
-      - uploads:/workspace/uploads:rw
     
 
   ai-front:
@@ -52,16 +45,6 @@ services:
     networks:
       - ai-agent
     working_dir: /workspace
-    volumes:
-      - ./frontend/public:/workspace/public:ro
-      - ./frontend/src:/workspace/src:rw
-      - ./frontend/eslint.config.js:/workspace/eslint.config.js:ro
-      - ./frontend/index.html:/workspace/index.html:ro
-      - ./frontend/package.json:/workspace/package.json:ro
-      - ./frontend/vite.config.js:/workspace/vite.config.js:ro
-      - ./frontend/.env:/workspace/.env:rw
-      - ./frontend/default.conf:/etc/nginx/conf.d/default.conf:rw
-    
 
 
 networks:
