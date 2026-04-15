@@ -31,7 +31,7 @@ services:
     networks:
       - ai-agent
     depends_on:
-      - maria
+      - mariadb
     working_dir: /workspace
     volumes:
       - ./backend/main.py:/workspace/main.py:rw
