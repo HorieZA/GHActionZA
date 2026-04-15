@@ -24,7 +24,7 @@ services:
     container_name: ai-back
     build:
       context: .
-      dockerfile: ./backend/Dockerfile
+      dockerfile: Dockerfile
     image: uv:1
     ports:
       - 8001:8000
@@ -46,7 +46,7 @@ services:
     container_name: ai-front
     build:
       context: ./frontend
-      dockerfile: ./frontend/Dockerfile   
+      dockerfile: Dockerfile   
     ports:
       - 80:80
     networks:
