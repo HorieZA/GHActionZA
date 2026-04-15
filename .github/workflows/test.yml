@@ -23,3 +23,11 @@ jobs:
       - name: npm build
         working-directory: ./frontend
         run: npm run build
+
+      # 2가지 방법이 존재
+      # - name: nginx
+      #   working-directory: ./frontend
+      #   run: docker run -d -p 80:80 -v ./dist:/usr/share/nginx/html --name web nginx:1.28
+
+      - name: nginx
+        run: docker run -d -p 80:80 -v ./frontend/dist:/usr/share/nginx/html --name web nginx:1.28
