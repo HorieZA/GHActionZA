@@ -11,5 +11,8 @@ jobs:
     steps:
       # - name: Check PowerShell
       #   run: $PSVersionTable
-      - name: Check Run tests
+      - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Check Node.js version
+        run: node -v
