@@ -24,7 +24,7 @@ services:
     container_name: backend
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: ./backend/dockerfile
     image: uv:1
     ports:
       - 8001:8000
