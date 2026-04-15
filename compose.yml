@@ -53,5 +53,5 @@ networks:
 
 volumes:
   data-mariadb:
-    external: true # 기존 Volume 사용 옵션!!
+    external: true # 기존 Volume 사용 옵션!!!
   uploads:
