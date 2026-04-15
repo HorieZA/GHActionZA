@@ -23,7 +23,7 @@ services:
   ai-back:
     container_name: ai-back
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     image: uv:1
     ports:
