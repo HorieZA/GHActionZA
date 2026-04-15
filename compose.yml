@@ -67,6 +67,5 @@ networks:
     driver: bridge
 
 volumes:
-  backend:
   data-mariadb:
     external: true # 기존 Volume 사용 옵션
