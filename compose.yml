@@ -20,8 +20,8 @@ services:
       - TZ=Asia/Seoul
       - LC_ALL:en_US.UTF-8
 
-  ai-backend:
-    container_name: ai-backend
+  backend:
+    container_name: backend
     build:
       context: .
       dockerfile: dockerfile
@@ -42,8 +42,8 @@ services:
       - uploads:/workspace/uploads:rw
     command: ["sleep", "infinity"]
 
-  ai-frontend:
-    container_name: ai-frontend
+  frontend:
+    container_name: frontend
     image: nginx:1.28
     ports:
       - 80:80
@@ -67,7 +67,6 @@ networks:
     driver: bridge
 
 volumes:
-  ai-frontend:
   ai-backend:
   data-mariadb:
     external: true # 기존 Volume 사용 옵션
