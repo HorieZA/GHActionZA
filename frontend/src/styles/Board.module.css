@@ -1,0 +1,108 @@
+.container {
+  background-color: #131314; /* 다크 배경 */
+  color: #e3e3e3;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1f20; /* 카드 배경 */
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  cursor: pointer;
+  /* 기존에 있던 transition 속성은 버튼 애니메이션을 위해 버튼 클래스로 이동 */
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4285f4; /* 파란색 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  margin-right: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contentTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2b2c2e; /* 버튼 기본 배경 */
+  color: white;
+  cursor: pointer;
+  /* --- 버튼 애니메이션을 위한 트랜지션 설정 --- */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* --- 버튼 마우스 오버 애니메이션 효과 --- */
+.button:hover {
+  transform: scale(1.03); /* 살짝 커지는 효과 */
+  background-color: #3a3b3d; /* 마우스 오버 시 버튼 배경색 변경 */
+}
+
+.buttonPrimary {
+  background-color: #4285f4; /* 기본 파란색 버튼 */
+}
+
+/* --- 파란색 버튼 마우스 오버 효과 --- */
+.buttonPrimary:hover {
+  background-color: #5a95f5; /* 마우스 오버 시 파란색 버튼 배경색 변경 */
+}
+
+.buttonPrimary {
+  background-color: #4285f4;
+  color: white;
+  font-weight: 500;
+}
+
+.buttonPrimary:hover {
+  background-color: #5a95f5;
+  transform: scale(1.02);
+}
+
+.buttonSecondary {
+  background-color: #2b2c2e;
+  color: #e3e3e3;
+  margin-top: 15px;
+}
+
+.buttonSecondary:hover {
+  background-color: #3a3b3d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

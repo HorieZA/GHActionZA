@@ -1,0 +1,77 @@
+.container {
+  background-color: #131314;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  marginBottom: 40px;
+  font-weight: 500;
+}
+
+.inputWrapper {
+  width: 100%;
+  max-width: 800px;
+  background-color: #1e1f20;
+  border-radius: 32px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.sendButton {
+  background: #4285f4;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sendButton:hover {
+  transform: scale(1.1);
+}
+
+
+.listLinkButton {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 800px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.listLinkButton:hover {
+  background-color: #5a95f5;
+  transform: scale(1.01);
+}
+
+.listLinkButton:active {
+  transform: scale(0.98);
+}
