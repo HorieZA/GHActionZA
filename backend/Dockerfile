@@ -13,7 +13,7 @@ COPY pyproject.toml uv.lock ./
 # 의존성 설치
 RUN uv sync
 
-# 전체 코드 복사
+# 전체 코드 복사s
 COPY . .
 
 EXPOSE 8000
