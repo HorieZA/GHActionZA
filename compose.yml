@@ -58,6 +58,7 @@ services:
       - ./frontend/package.json:/workspace/package.json:ro
       - ./frontend/vite.config.js:/workspace/vite.config.js:ro
       - ./frontend/.env:/workspace/.env:rw
+      - ./frontend/default.conf:/etc/nginx/conf.d/default.conf:rw
     command: ["sleep", "infinity"]
 
 

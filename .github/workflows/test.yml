@@ -14,15 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
+
+      - name: compose up
+        run: docker compose up -d
       # - name: Check Node.js version
       #   run: node -v
-      - name: npm install
-        working-directory: ./frontend
-        run: npm i
+      # - name: npm install
+      #   working-directory: ./frontend
+      #   run: npm i
 
-      - name: npm build
-        working-directory: ./frontend
-        run: npm run build
+      # - name: npm build
+      #   working-directory: ./frontend
+      #   run: npm run build
 
       # 2가지 방법이 존재
       # - name: nginx
@@ -37,14 +40,14 @@ jobs:
       #     docker rm -f web
       #     docker run -d -p 80:80 -v ./frontend/dist:/usr/share/nginx/html -v ./frontend/default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
 
-      - name: nginx start
-        working-directory: ./frontend
-        run: docker run -d -p 80:80 -v ./dist:/usr/share/nginx/html -v ./default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
+      # - name: nginx start
+      #   working-directory: ./frontend
+      #   run: docker run -d -p 80:80 -v ./dist:/usr/share/nginx/html -v ./default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
 
-      - name: uv image build
-        working-directory: ./backend
-        run: docker build -t uv:1 .
+      # - name: uv image build
+      #   working-directory: ./backend
+      #   run: docker build -t uv:1 .
 
-      - name: fastapi run
-        working-directory: ./backend
-        run: docker run -d -p 8001:8000 -v .:/workspace --name back uv:1
+      # - name: fastapi run
+      #   working-directory: ./backend
+      #   run: docker run -d -p 8001:8000 -v .:/workspace --name back uv:1
