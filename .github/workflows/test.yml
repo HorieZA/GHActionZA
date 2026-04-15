@@ -33,4 +33,14 @@ jobs:
       # 그렇다 보니 최초에는 추가하면 안됨
 
       - name: nginx
-        run: docker run -d -p 80:80 -v ./frontend/dist:/usr/share/nginx/html -v ./frontend/default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
+        run: |
+          docker rm -f web
+          docker run -d -p 80:80 -v ./frontend/dist:/usr/share/nginx/html -v ./frontend/default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
+
+      - name: uv image build
+        working-directory: ./backend
+        run: docker build -t uv:1 .
+
+      - name: fastapi run
+        working-directory: ./backend
+        run: docker run -d -p 8001:8000 -v .:/workspace --name back uv:1
